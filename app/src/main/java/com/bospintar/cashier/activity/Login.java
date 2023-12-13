@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 public class Login extends AppCompatActivity {
+    //coba saya push
     private boolean passwordVisible = false;
     SwipeRefreshLayout swipeLayout;
     private static final String TAG = Login.class.getSimpleName();
@@ -64,7 +65,6 @@ public class Login extends AppCompatActivity {
             }
         });
         swipeLayout.setColorScheme(new int[]{android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light});
-
         // Menggunakan animasi slide up.
 
 
