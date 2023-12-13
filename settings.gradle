@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+
+        maven { url 'https://jitpack.io' } // Add JitPack repository here
+        google()
+        mavenCentral()
+        jcenter();
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "My Cashier"
+include ':app'

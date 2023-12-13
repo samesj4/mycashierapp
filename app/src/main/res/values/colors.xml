@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    //universal
+    <color name="background">#F9F9F9</color>
+    <color name="utama">#3967D6</color>
+    <color name="utama_dark">#2652BC</color>
+    <color name="putih">#fff</color>
+    <color name="putih_tetap">#fff</color>
+    <color name="transparans">#00000000</color>
+    <color name="transparans2">#0F000000</color>
+
+    //text
+    <color name="hint">#C8C8C8</color>
+    <color name="hint2">#9A9A9A</color>
+    <color name="textcolor">#373737</color>
+    <color name="hint_utama">#B3C5EF</color>
+    <color name="link">#80E2A6</color>
+    //edittext
+    <color name="stroke_edittext">#EFECEC</color>
+</resources>

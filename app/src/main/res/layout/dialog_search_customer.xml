@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/utama">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer"
+            android:textColor="@color/putih"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="vertical" >
+        <EditText
+            android:id="@+id/edt_cari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/bg_edittext_white"
+            android:drawableRight="@drawable/ic_search"
+            android:drawablePadding="18dp"
+            android:hint="Cari disini..."
+            android:padding="18dp"
+            android:textColorHint="@color/hint"
+            android:textSize="14dp" />
+
+
+
+        <ListView
+            android:id="@+id/dialog_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <Button
+            android:id="@+id/dialog_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@color/purple_500"
+            android:text="cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/putih"
+            android:textSize="16sp"
+            app:backgroundTint="@color/utama" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
