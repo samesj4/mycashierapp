@@ -221,7 +221,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="4dp"
-                            android:text="Petugas"
+                            android:text="Pegawai"
                             android:textColor="@color/textcolor"
                             android:textSize="12dp" />
                     </LinearLayout>
@@ -252,7 +252,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/ln_histori"
+                        android:id="@+id/ln_lainnya"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -265,13 +265,13 @@
                         <ImageView
                             android:layout_width="58dp"
                             android:layout_height="58dp"
-                            android:src="@drawable/ic_menu_laporan" />
+                            android:src="@drawable/ic_menu_lainnya" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="4dp"
-                            android:text="Laporan"
+                            android:text="Lainnya"
                             android:textColor="@color/textcolor"
                             android:textSize="12dp" />
                     </LinearLayout>
@@ -326,7 +326,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <androidx.recyclerview.widget.RecyclerView

@@ -84,6 +84,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_marginBottom="24dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -182,6 +183,7 @@
                                 android:id="@+id/toggleButtonmetodebayar"
                                 android:layout_width="84dp"
                                 android:layout_height="28dp"
+                                android:checked="false"
                                 android:background="@drawable/selector_switch_tf"
                                 android:padding="4dp"
                                 android:textOff=""

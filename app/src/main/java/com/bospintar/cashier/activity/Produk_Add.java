@@ -128,8 +128,6 @@ public class Produk_Add extends AppCompatActivity {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Produk_Add.this, Produk.class);
-                startActivity(intent);
                 finish();
             }
         });
@@ -385,8 +383,7 @@ public class Produk_Add extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Produk_Add.this, Produk.class);
-        startActivity(intent);
+
         finish();
     }
 }

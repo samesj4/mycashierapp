@@ -53,4 +53,12 @@
     </style>
 
 
+    <style name="DialogAnimasi">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
 </resources>

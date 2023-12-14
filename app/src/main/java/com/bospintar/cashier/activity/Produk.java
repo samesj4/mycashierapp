@@ -101,15 +101,13 @@ public class Produk extends AppCompatActivity implements SwipeRefreshLayout.OnRe
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Produk_Add.class));
-                finish();
             }
         });
         btBack=findViewById(R.id.bt_back);
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Produk.this, Menu.class);
-                startActivity(intent);
+
                 finish();
             }
         });
@@ -205,8 +203,7 @@ public class Produk extends AppCompatActivity implements SwipeRefreshLayout.OnRe
     }
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Produk.this, Menu.class);
-        startActivity(intent);
+
         finish();
     }
     @Override

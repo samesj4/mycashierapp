@@ -411,8 +411,7 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
     }
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Pengeluaran.this, Menu.class);
-        startActivity(intent);
+
         finish();
     }
     @Override

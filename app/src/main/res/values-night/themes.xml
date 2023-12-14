@@ -1,7 +1,47 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyCashier" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.MyCashier" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <!-- Customize your theme here. -->
     </style>
+
+
+    <!--  bg  white-->
+    <style name="themebgwhite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/white</item>
+    </style>
+
+    <!-- bg -->
+    <style name="themebg" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/background</item>
+    </style>
+
+    <!--    utama-->
+    <style name="themeutama" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/utama</item>
+    </style>
+
+    <!--    utama  bg -->
+    <style name="themeutamabg" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+    </style>
+
+    <!--    utama white -->
+    <style name="themeutamawhite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+    </style>
+
+
+    <style name="DialogAnimasi">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
 </resources>
