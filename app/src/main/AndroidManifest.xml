@@ -41,9 +41,11 @@
             android:exported="false" />
         <activity
             android:name=".activity.ProdukTransaksi"
+            android:theme="@style/themeutamawhite"
             android:exported="false" />
         <activity
             android:name=".activity.TransaksiDetailActivity"
+            android:theme="@style/themeutamawhite"
             android:exported="false" />
         <activity
             android:name=".activity.PendingActivity"

@@ -4,10 +4,10 @@
     <color name="white">#FFFFFFFF</color>
 
     //universal
-    <color name="background">#F9F9F9</color>
+    <color name="background">#1A1A24</color>
     <color name="utama">#3967D6</color>
     <color name="utama_dark">#2652BC</color>
-    <color name="putih">#fff</color>
+    <color name="putih">#232333</color>
     <color name="putih_tetap">#fff</color>
     <color name="transparans">#00000000</color>
     <color name="transparans2">#0F000000</color>
@@ -15,23 +15,23 @@
     <color name="red2">#AF2810</color>
 
     //text
-    <color name="hint0">#F1F1F1</color>
-    <color name="hint">#C8C8C8</color>
+    <color name="hint0">#3D4149</color>
+    <color name="hint">#646E85</color>
     <color name="hint2">#9A9A9A</color>
-    <color name="textcolor">#373737</color>
+    <color name="textcolor">#E0E6F3</color>
     <color name="hint_utama">#B3C5EF</color>
     <color name="link">#80E2A6</color>
 
     //edittext
-    <color name="stroke_edittext">#EFECEC</color>
-
+    <color name="stroke_edittext">#33333A</color>
 
     //button
-    <color name="minus1">#5B5B5B</color>
-    <color name="minus1_stroke">#E5E5E5</color>
-    <color name="minus1_fill">#F5F5F5</color>
-    <color name="minus2">#DDDDDD</color>
-    <color name="clear">#C8C8C8</color>
+    <color name="minus1">#E0E6F3</color>
+    <color name="minus1_stroke">#646E85</color>
+    <color name="minus1_fill">#434350</color>
+    <color name="minus2">#616170</color>
+    <color name="clear">#616170</color>
+
 
 
 

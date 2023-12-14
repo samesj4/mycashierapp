@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,8 @@ public class TransaksiDetailAdapter extends RecyclerView.Adapter<TransaksiDetail
     private Context mContext;
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txtnamaproduk, txtharga,txtjumlah,minus,plus,txttotal;
+        TextView txtnamaproduk, txtharga,txtjumlah,txttotal;
+        ImageView minus,plus;
         LinearLayout btpindah;
 
 

@@ -46,43 +46,38 @@
                     android:textSize="14dp" />
 
                 <LinearLayout
+                    android:background="@drawable/bg_stroke_white_round"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_stroke_white"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/minus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/selector_transparan"
-                        android:padding="4dp"
-                        android:text=" - "
-                        android:textColor="@color/hint"
-                        android:textSize="14dp" />
+                        android:clickable="true"
+                        android:src="@drawable/selector_minus" />
 
                     <TextView
                         android:id="@+id/txtjumlah"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:padding="5dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:text="5"
-                        android:textColor="@color/hint"
+                        android:textColor="@color/textcolor"
                         android:textSize="14dp" />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/plus"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/selector_transparan"
-                        android:padding="4dp"
-                        android:text=" + "
-                        android:textColor="@color/hint"
-                        android:textSize="14dp" />
+                        android:src="@drawable/selector_plus" />
 
                 </LinearLayout>
+
             </LinearLayout>
 
             <View

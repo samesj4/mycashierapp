@@ -7,10 +7,11 @@
     android:background="@color/background"
     android:orientation="vertical">
 
+
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -47,8 +48,8 @@
                 android:layout_height="28dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
-                android:clickable="true"
-                android:layout_marginRight="16dp">
+                android:layout_marginRight="16dp"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/btsave"
@@ -117,62 +118,69 @@
 
         </RelativeLayout>
 
-        <ScrollView
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refreshdatahistorykegiatan"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:scrollbars="none">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/txtpesan"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:textSize="14dp"
-                    android:textStyle="bold" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="48dp"
-                android:background="@drawable/bg_list_white"
-                android:orientation="vertical"
-                android:padding="16dp">
-                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                    android:id="@+id/swipe_refreshdatahistorykegiatan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:orientation="vertical">-->
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtpesan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="48dp"
+                        android:background="@drawable/bg_list_white"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_weight="1"-->
+                        <!--                        android:orientation="vertical">-->
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rcList"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
-<!--                    </LinearLayout>-->
+                        <!--                    </LinearLayout>-->
 
-                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-            </LinearLayout>
+                    </LinearLayout>
 
 
-            </LinearLayout>
-        </ScrollView>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginRight="-2dp"
+        android:layout_marginBottom="-2dp"
         android:background="@drawable/bg_stroke_white"
         android:orientation="horizontal">
 
