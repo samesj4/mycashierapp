@@ -55,29 +55,64 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp">
+                    android:layout_height="150dp">
+
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/bg_bottom_corner_utama" />
-
-                    <EditText
-                        android:id="@+id/edt_cari"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/txttotalpengeluaran"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:background="@drawable/bg_edittext_white"
-                        android:drawableRight="@drawable/ic_search"
-                        android:drawablePadding="18dp"
-                        android:hint="Cari pengeluaran disini..."
-                        android:padding="18dp"
-                        android:textColorHint="@color/hint"
-                        android:textSize="14dp" />
+                        android:paddingLeft="8dp"
+                        android:text="Rp 0"
+                        android:textColor="@color/putih_tetap"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edt_dari"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="36dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edittext_white"
+                            android:drawableRight="@drawable/ic_search"
+                            android:drawablePadding="18dp"
+                            android:hint="Dari..."
+                            android:padding="18dp"
+                            android:textColorHint="@color/hint"
+                            android:textSize="14dp" />
+
+                        <EditText
+                            android:id="@+id/edt_sampai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="36dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edittext_white"
+                            android:drawableRight="@drawable/ic_search"
+                            android:drawablePadding="18dp"
+                            android:hint="Sampai..."
+                            android:padding="18dp"
+                            android:textColorHint="@color/hint"
+                            android:textSize="14dp" />
+                    </LinearLayout>
 
                 </RelativeLayout>
 
@@ -95,7 +130,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="16dp"
                         android:textSize="14dp"
                         android:textStyle="bold" />
                     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

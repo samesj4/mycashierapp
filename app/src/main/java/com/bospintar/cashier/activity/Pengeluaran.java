@@ -1,6 +1,7 @@
 package com.bospintar.cashier.activity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -42,7 +44,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -59,6 +66,12 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
     ArrayList<Mpengeluaran> arraylist = new ArrayList<>();
     TextView add;
     ImageView btBack;
+
+    EditText Tanggalfrom,Tanggalto;
+    String tanggalpjfrom,tanggalpjto;
+    Calendar myCalendar = Calendar.getInstance();
+
+    SimpleDateFormat sdcurrentdate = new SimpleDateFormat("yyyy-MM-dd", new Locale("id", "ID"));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,35 +90,42 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
         rcList.setAdapter(adapter);
 
 
+
+        Tanggalfrom = findViewById(R.id.edt_dari);
+        Tanggalto = findViewById(R.id.edt_sampai);
+        Tanggalfrom.setText(sdcurrentdate.format(new Date()));
+        Tanggalto.setText(sdcurrentdate.format(new Date()));
+        Tanggalfrom.setFocusableInTouchMode(false);
+        Tanggalfrom.setFocusable(false);
+        Tanggalfrom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(Pengeluaran.this, datefrom, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        Tanggalto.setFocusableInTouchMode(false);
+        Tanggalto.setFocusable(false);
+        Tanggalto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(Pengeluaran.this, dateto, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
         swipe.setOnRefreshListener(this);
 
         swipe.post(new Runnable() {
                        @Override
                        public void run() {
                            swipe.setRefreshing(true);
-                           callData();
+                           callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
                        }
                    }
         );
-        EditText yourEditText = findViewById(R.id.edt_cari);
 
-        yourEditText.addTextChangedListener(new TextWatcher() {
-
-            public void afterTextChanged(Editable s) {
-
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                String text = s.toString().toLowerCase(Locale.getDefault());
-                TextView txt = findViewById(R.id.txtpesan);
-                adapter.filter(text, txt);
-
-            }
-        });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,6 +173,51 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
         });
 
     }
+    DatePickerDialog.OnDateSetListener datefrom = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            setTanggalfrom();
+        }
+
+    };
+    DatePickerDialog.OnDateSetListener dateto = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            setTanggalto();
+        }
+
+    };
+    private void setTanggalfrom() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", new Locale("id", "ID"));
+        Tanggalfrom.setText(sdf.format(myCalendar.getTime()));
+    }
+    private void setTanggalto() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", new Locale("id", "ID"));
+        Tanggalto.setText(sdf.format(myCalendar.getTime()));
+        tanggalpjfrom = Tanggalfrom.getText().toString();
+        tanggalpjto = Tanggalto.getText().toString();
+        if (tanggalpjfrom.equals("")) {
+            Tanggalfrom.setError("Belum diisi");
+            Tanggalfrom.requestFocus();
+        }else if (tanggalpjto.equals("")) {
+            Tanggalto.setError("Belum diisi");
+            Tanggalto.requestFocus();
+        } else {
+            callData(tanggalpjfrom,tanggalpjto);
+        }
+    }
     public void simpancustomerData(final String _keterangan,final String _nominal) {
         pDialog = new ProgressDialog(Pengeluaran.this);
         pDialog.setCancelable(false);
@@ -167,11 +232,11 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
                     int value = jObj.getInt("success");
                     if (value == 1) {
                         Toast.makeText(Pengeluaran.this, "Sukses", Toast.LENGTH_SHORT).show();
-                        callData();
+                        callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
 
                     } else {
                         Toast.makeText(Pengeluaran.this, "Gagal", Toast.LENGTH_SHORT).show();
-                        callData();
+                        callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -213,11 +278,11 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
                     int value = jObj.getInt("success");
                     if (value == 1) {
                         Toast.makeText(Pengeluaran.this, "Sukses", Toast.LENGTH_SHORT).show();
-                        callData();
+                        callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
 
                     } else {
                         Toast.makeText(Pengeluaran.this, "Gagal", Toast.LENGTH_SHORT).show();
-                        callData();
+                        callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -285,7 +350,7 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
         };
         AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
     }
-    private void callData() {
+    private void callData(final String tanggalpjfrom,final String tanggalpjto) {
         arraylist.clear();
 //        adapter.notifyDataSetChanged();
         swipe.setRefreshing(true);
@@ -319,6 +384,12 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
                         }
                         adapter = new PengeluaranAdapter(arraylist, Pengeluaran.this,rcList);
                         rcList.setAdapter(adapter);
+                        TextView txtTotalpengeluaran = findViewById(R.id.txttotalpengeluaran);
+                        DecimalFormat rupiahFormat = (DecimalFormat) NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+                        double totalp=Double.parseDouble(jObj.getString("total_pengeluaran"));
+                        rupiahFormat.setParseBigDecimal(true);
+                        rupiahFormat.applyPattern("#,##0");
+                        txtTotalpengeluaran.setText("Rp"+rupiahFormat.format(totalp));
 
                     } else {
                         Toast.makeText(Pengeluaran.this, "Kosong", Toast.LENGTH_SHORT).show();
@@ -345,7 +416,8 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-
+                params.put("dari", tanggalpjfrom);
+                params.put("sampai", tanggalpjto);
                 params.put("idtoko", xidtoko);
 
                 return params;
@@ -416,6 +488,7 @@ public class Pengeluaran extends AppCompatActivity implements SwipeRefreshLayout
     }
     @Override
     public void onRefresh() {
-        callData();
+
+        callData(Tanggalfrom.getText().toString(),Tanggalto.getText().toString());
     }
 }

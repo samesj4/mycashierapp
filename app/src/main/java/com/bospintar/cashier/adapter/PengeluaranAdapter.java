@@ -154,38 +154,38 @@ public class PengeluaranAdapter extends RecyclerView.Adapter<PengeluaranAdapter.
 
             }
         });
-        String notes = arrayJenis.get(position).getKeterangan();
-        SpannableStringBuilder sb = new SpannableStringBuilder(notes);
-        Pattern p = Pattern.compile(baru, Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(notes);
-        while (m.find()) {
-            sb.setSpan(new ForegroundColorSpan(Color.rgb(255, 0, 0)), m.start(), m.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        }
-        holder.keterangan.setText(sb);
+//        String notes = arrayJenis.get(position).getKeterangan();
+//        SpannableStringBuilder sb = new SpannableStringBuilder(notes);
+//        Pattern p = Pattern.compile(baru, Pattern.CASE_INSENSITIVE);
+//        Matcher m = p.matcher(notes);
+//        while (m.find()) {
+//            sb.setSpan(new ForegroundColorSpan(Color.rgb(255, 0, 0)), m.start(), m.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+//        }
+//        holder.keterangan.setText(sb);
     }
     @SuppressLint("SetTextI18n")
-    public void filter(String charText, TextView itemView) {
-        charText = charText.toLowerCase(Locale.getDefault());
-        arrayJenis.clear();
-        if (charText.length() == 0) {
-            arrayJenis.addAll(arraylist);
-            baru = "";
-            itemView.setVisibility(View.GONE);
-        } else {
-            for (Mpengeluaran wp : arraylist) {
-                if (wp.getKeterangan().toLowerCase(Locale.getDefault()).contains(charText)) {
-                    arrayJenis.add(wp);
-                    baru = charText;
-                    itemView.setVisibility(View.GONE);
-                }
-            }
-            if (arrayJenis.isEmpty()) {
-                itemView.setVisibility(View.VISIBLE);
-                itemView.setText("Tidak ada data untuk " + "'" + charText + "'");
-            }
-        }
-        notifyDataSetChanged();
-    }
+//    public void filter(String charText, TextView itemView) {
+//        charText = charText.toLowerCase(Locale.getDefault());
+//        arrayJenis.clear();
+//        if (charText.length() == 0) {
+//            arrayJenis.addAll(arraylist);
+//            baru = "";
+//            itemView.setVisibility(View.GONE);
+//        } else {
+//            for (Mpengeluaran wp : arraylist) {
+//                if (wp.getKeterangan().toLowerCase(Locale.getDefault()).contains(charText)) {
+//                    arrayJenis.add(wp);
+//                    baru = charText;
+//                    itemView.setVisibility(View.GONE);
+//                }
+//            }
+//            if (arrayJenis.isEmpty()) {
+//                itemView.setVisibility(View.VISIBLE);
+//                itemView.setText("Tidak ada data untuk " + "'" + charText + "'");
+//            }
+//        }
+//        notifyDataSetChanged();
+//    }
 
     @Override
     public int getItemCount() {
