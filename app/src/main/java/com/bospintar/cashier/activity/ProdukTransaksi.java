@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,6 +74,15 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
                 Intent intent = new Intent(ProdukTransaksi.this, TransaksiDetailActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        RelativeLayout btpending = findViewById(R.id.btpending);
+        btpending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProdukTransaksi.this, PendingActivity.class);
+                startActivity(intent);
             }
         });
 
