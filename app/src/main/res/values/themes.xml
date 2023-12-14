@@ -13,4 +13,44 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <!--  bg  white-->
+    <style name="themebgwhite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <!-- bg -->
+    <style name="themebg" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <!--    utama-->
+    <style name="themeutama" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <!--    utama  bg -->
+    <style name="themeutamabg" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/background</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <!--    utama white -->
+    <style name="themeutamawhite" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/utama</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/putih</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+
 </resources>
