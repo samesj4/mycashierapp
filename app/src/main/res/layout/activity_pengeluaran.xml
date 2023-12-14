@@ -20,6 +20,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/bulan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -43,25 +44,23 @@
         </RelativeLayout>
 
         <ScrollView
-            android:scrollbars="none"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bottom_corner_utama"
+                    android:orientation="vertical">
 
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@drawable/bg_bottom_corner_utama" />
                     <TextView
                         android:id="@+id/txttotalpengeluaran"
                         android:layout_width="wrap_content"
@@ -72,20 +71,27 @@
                         android:textSize="24dp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:text="Total Keuangan"
+                        android:textColor="@color/putih_tetap"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+
                     <LinearLayout
+                        android:layout_margin="8dp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <EditText
                             android:id="@+id/edt_dari"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="36dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_margin="8dp"
                             android:layout_weight="1"
                             android:background="@drawable/bg_edittext_white"
                             android:drawableRight="@drawable/ic_search"
@@ -99,11 +105,7 @@
                             android:id="@+id/edt_sampai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="36dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_margin="8dp"
                             android:layout_weight="1"
                             android:background="@drawable/bg_edittext_white"
                             android:drawableRight="@drawable/ic_search"
@@ -114,17 +116,18 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                </RelativeLayout>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
                     android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     android:layout_marginBottom="48dp"
                     android:background="@drawable/bg_list_white"
                     android:orientation="vertical"
                     android:padding="16dp">
+
                     <TextView
                         android:id="@+id/txtpesan"
                         android:layout_width="match_parent"
@@ -132,6 +135,7 @@
                         android:gravity="center"
                         android:textSize="14dp"
                         android:textStyle="bold" />
+
                     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                         android:id="@+id/swipe_refreshdata"
                         android:layout_width="match_parent"
