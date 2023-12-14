@@ -254,6 +254,7 @@ public class Menu extends AppCompatActivity implements SwipeRefreshLayout.OnRefr
             }
         });
 
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

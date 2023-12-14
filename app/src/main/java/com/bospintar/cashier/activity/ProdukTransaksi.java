@@ -283,8 +283,6 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
     }
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(ProdukTransaksi.this, Menu.class);
-        startActivity(intent);
         finish();
     }
     @Override
