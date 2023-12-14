@@ -197,6 +197,7 @@ public class Menu extends AppCompatActivity implements SwipeRefreshLayout.OnRefr
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("idtoko", xidtoko);
+                params.put("idpetugas", xidpetugas);
 
                 return params;
             }
