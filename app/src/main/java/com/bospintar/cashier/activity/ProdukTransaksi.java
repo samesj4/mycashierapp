@@ -90,10 +90,7 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
         final GridLayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rcList.setLayoutManager(mLayoutManager);
-        rcList.setNestedScrollingEnabled(false);
-        rcList.suppressLayout(true);
-        rcList.setNestedScrollingEnabled(false);
-        rcList.setHasFixedSize(false);
+        rcList.setAdapter(adapter);
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
