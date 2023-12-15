@@ -79,19 +79,6 @@ public class Produk extends AppCompatActivity implements SwipeRefreshLayout.OnRe
                        }
                    }
         );
-        NestedScrollView nestedScrollView = findViewById(R.id.nestedScrollView);
-        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (scrollY == 0) {
-                    // At the top of the NestedScrollView, enable swipe to refresh
-                    swipe.setEnabled(true);
-                } else {
-                    // Not at the top, disable swipe to refresh
-                    swipe.setEnabled(false);
-                }
-            }
-        });
         EditText yourEditText = findViewById(R.id.edt_cariproduk);
 
         yourEditText.addTextChangedListener(new TextWatcher() {
