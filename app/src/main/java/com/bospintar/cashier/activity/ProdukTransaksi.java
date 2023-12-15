@@ -136,17 +136,11 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
     }
     private void callData() {
         arraylist.clear();
-//        adapter.notifyDataSetChanged();
         swipe.setRefreshing(true);
-
-        // Creating volley request obj
         StringRequest jArr = new StringRequest(Request.Method.POST, URL_SERVER.CPRODUKTRANSAKSI, new Response.Listener<String>() {
-
             @Override
             public void onResponse(String response) {
                 Log.e("Response: ", response.toString());
-
-
                 try {
                     JSONObject jObj = new JSONObject(response);
                     String value = jObj.getString(TAG_VALUE);
@@ -165,7 +159,6 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject data = jsonArray.getJSONObject(i);
-
                             Mproduk wp = new Mproduk(data.getString("id"), data.getString("nama"), data.getString("hargajual"),
                                     data.getString("hargabeli"), data.getString("grosir"),data.getString("stok"),data.getString("satuan"),data.getString("isi_stok"));
                             arraylist.add(wp);
@@ -173,11 +166,9 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
                         }
                         adapter = new ProdukTransaksiAdapter(arraylist, ProdukTransaksi.this);
                         rcList.setAdapter(adapter);
-
                     } else {
                         Toast.makeText(ProdukTransaksi.this, "Kosong", Toast.LENGTH_SHORT).show();
                     }
-
                 } catch (JSONException e) {
                     // JSON error
                     e.printStackTrace();
@@ -194,20 +185,15 @@ public class ProdukTransaksi extends AppCompatActivity implements SwipeRefreshLa
                 swipe.setRefreshing(false);
             }
         }) {
-
             @Override
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-
                 params.put("idtoko", xidtoko);
                 params.put("idpetugas", xidpetugas);
-
                 return params;
             }
-
         };
-
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(jArr, tag_json_obj);
     }

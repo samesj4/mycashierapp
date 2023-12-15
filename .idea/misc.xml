@@ -17,6 +17,7 @@
         <entry key="..\:/kara/MyCashier/app/src/main/res/drawable/selector_transparan.xml" value="0.1" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_add_pelanggan.xml" value="0.20416666666666666" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_home_item.xml" value="0.33" />
+        <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_laporan.xml" value="0.33" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_menu.xml" value="0.25" />
@@ -31,7 +32,7 @@
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_pengeluaranadd.xml" value="0.25" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_petugas.xml" value="0.20416666666666666" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_petugas_add.xml" value="0.20102564102564102" />
-        <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_petugas_item.xml" value="0.15572916666666667" />
+        <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_petugas_item.xml" value="0.25" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_produk.xml" value="0.17" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_produk_add.xml" value="0.33" />
         <entry key="..\:/kara/MyCashier/app/src/main/res/layout/activity_produk_item.xml" value="0.5" />
